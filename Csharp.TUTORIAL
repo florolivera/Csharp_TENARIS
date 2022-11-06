@@ -1,0 +1,166 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Csharp_Tutorial
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //INTRODUCCION 
+            /*using system: quiere decir que podemos hacer uso de las clases que hay 
+             dentro de SYSTEM 
+            namespace: se usa para organizar el codigo y vendtia a ser el contenedor para clases
+            y otros namespaces
+            {}: marca el principio y final de un bloque de codigo
+            class: es un contenedor de data methods, que brindarian funcionalidad a nuestro programa.
+            Todo tipo de codigo existente en este lenguaje esta dentro de una clase, como lo es por ejemplo
+            la clase PROGRAM*/
+
+            //TYPE CASTING
+            /*type casting es cuando se le asigna un valor de otro tipo de dato a determinado tipo de dato
+             IMPLICIT CATING(AUTOMATICALLY): convertir un tipo de dato mas pequeño a uno mayor 
+            
+                char -> int -> long -> float -> double*/
+            int numeroInt = 10;
+            double numeroDouble = numeroInt;
+            Console.WriteLine(numeroInt);
+            Console.WriteLine(numeroDouble);
+
+            /*EXPLICIT CASTING(MANUALLY): convierte un tipo de dato mayor a uno mas chico.
+             double -> float -> long -> int -> char*/
+            double numeroD = 9.78;
+            int numeroI = (int)numeroD;
+            Console.WriteLine(numeroD);
+            Console.WriteLine(numeroI);
+
+            //TYPE CONVERSION METHODS
+            /*tambien es posible convertir tipos de datos explicitamente usando built-in methods,
+             como lo son por ejemplo 
+            1.Convert.ToBoolean
+            2.Convert.ToDouble
+            3.Convert.ToString
+            4.Convert.ToInt32(int)
+            5.Convert.ToInt64(long)*/
+
+            int miInt = 10;
+            double miDouble = 5.25;
+            bool miBool = true;
+            Console.WriteLine(Convert.ToString(miInt));
+            Console.WriteLine(Convert.ToDouble(miInt));
+            Console.WriteLine(Convert.ToInt32(miDouble));
+            Console.WriteLine(Convert.ToString(miBool));
+
+            //MATH
+            /*minimo: Math.Min(x,y)
+             maximo: Math.Max(x,y)
+            redondea: Math.Round(x)
+            raiz cuadrada: Math.Sqrt(x)
+            valor absoluto: Math.Abs(x)*/
+            Console.WriteLine(Math.Min(miInt, numeroI));
+            Console.WriteLine(Math.Max(miInt, numeroI));
+            Console.WriteLine(Math.Round(numeroD));
+            Console.WriteLine(Math.Sqrt(numeroI));
+            int absoluto = -5;
+            Console.WriteLine(Math.Abs(absoluto));
+
+            //STRINGS
+            /*mayuscula: Toupper()
+             minuscula: ToLower()*/
+            string linea = "hola mundo!", linea2 = "HOLA MUNDO!!";
+            Console.WriteLine(linea.ToUpper());
+            Console.WriteLine(linea2.ToLower());
+
+            //CONCATENATION 
+            string nombre = "Juan", apellido = " Perez", nombreC = nombre + apellido;
+            Console.WriteLine(nombreC);
+            String NombreComp = string.Concat(nombre, apellido);
+            string NombreCompleto = $"mi nombre completo es: {nombre}{apellido}";
+
+            //ACCES THINGS 
+            string myString = "Hello";
+            Console.WriteLine(myString[0]); //retorna H
+            Console.WriteLine(myString[1]); //retorna e
+
+            int charPos = nombreC.IndexOf("P");
+            string apellido2 = nombreC.Substring(charPos);
+            Console.WriteLine(apellido); //retorna perez
+
+            Console.WriteLine(myString.IndexOf("e")); //retorna 1
+
+            //STRING SPECIAL CHARACTERS
+
+            //  ESCAPE CHARACTER   |     RESULT    |    DESCRIPTION
+            // -------------------------------------------------------
+            //      \'             |       '       |    single quote
+            //      \"             |       "       |    double quote
+            //      \\             |       \       |     backslash
+
+            string txt = "we are the so-called\"vikings\" from the north";
+            string txt2 = "it\'s alright";
+            string txt3 = "the character \\ is called backslash";
+            Console.WriteLine(txt); //retorna we are so-called "vikings" from the north
+            Console.WriteLine(txt2); //it's alright
+            Console.WriteLine(txt3); //the character \ is called backslash
+
+            //OTROS SCAPE CHARACTERS
+            
+            //      CODE        |        RESULT
+            //-----------------------------------------
+            //      \N          |       new line
+            //      \t          |       tab
+            //      \b          |       blackspace
+
+            //SINTAXIS PARA SHORT IF 
+            int n=9;
+            n = (n > 8) ? n++ : n = 0;
+
+            //FOREACH LOOP 
+            //SINTAXIS 
+
+            //foreach(TIPO nombre.variable in nombreArray)
+            // {
+            //      bloque de codigo a ejecutar
+            // }
+
+            string[] autos = {"Volvo", "bmw", "Ford", "Mazda"};
+            foreach(string x in autos)
+            {
+                Console.WriteLine(x);
+            }
+
+            // SINTAXIS PARA VECTORES
+
+            //(ejemplo 1, como fue la sintaxis del vector autos)
+            //string[] autos = {"Volvo", "bmw", "Ford", "Mazda"};
+            
+            //declarar un array de 4 elementos
+            String[] autos1 = new string[4];
+
+            //declarar un array de 4 elementos sin especificar los lugares de cada uno 
+            String[] autos2 = new string[] { "volvo", "bmw", "ford", "mazda" };
+
+            //SORT AN ARRAY
+            /* los arrays tienen muchos metodos que podriamos usar, uno de ellos es sort(), que 
+             muestra un vector en orden alfabetico o ascendente y no por orden de indice*/
+
+            Array.Sort(autos);
+            foreach(string i in autos)
+            {
+                Console.WriteLine(i);
+            }
+
+            //System.Linq Namespace
+            /*otro metodo para vectores como min, max, sum, pueden encontrarse en el namespace
+             system.Linq*/
+
+            //SINTAXIS: en la parte de namespace agregar system.linq y usar los metodos mencionados
+            //con vectores
+
+            Console.ReadKey();
+        }
+    }
+}
