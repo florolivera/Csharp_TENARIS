@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Csharp.Methods
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //DESCRIPCION
+            /*llamamos metodo a un bloque de codigo
+             que se ejecuta unicamente cuando lo llamamos. Es muy util porque
+            escribimos el codigo por unica vez pero reutilizamos varias veces.
+            Pasamos datos por parametro, tambien son conocidos como FUNCIONES*/
+
+            //CREAR UN METODO 
+            //sintaxis 
+            /*Class Program
+             {
+                static void myMethod()
+                {
+                    bloque de codigo
+                }
+            }*/
+
+            //LLAMAR AL METODO 
+
+            static void myMethod()
+            {
+                Console.WriteLine("EJECUCION");
+            } //enrealidad iria fuera del bloque de codigo MAIN
+
+            myMethod(); //retorna "EJECUCION"
+
+            //PARAMETROS 
+            static void otroMetodo(string nombre)
+            {
+                Console.WriteLine(nombre + " Refsnes");
+            }
+
+            otroMetodo("Evan"); //retorna Evan Refsnes
+
+            //PARAMETRO POR DEFAULT 
+            /*tambien a los parametros podemos darle un valor por defecto utilizando el nombre de 
+             la variable asignandole un valor*/
+
+            static void metodo2(string pais = "Argentina")
+            {
+                Console.WriteLine(pais);
+            }
+            Console.WriteLine("Alemania"); //retorna alemania
+            Console.WriteLine(); //retorna argentina
+            /*dato: void lo utilizamos unicamente cuando el metodo no tiene return
+            en caso de tener return lo cambiamos por el tipo de valor que retorna*/
+
+            //RETORNAR UN VALOR 
+            static int metodo3(int n)
+            {
+                return 5 + n;
+            }
+            Console.WriteLine(metodo3(3)); //retorna 8
+        }
+    }
+}
